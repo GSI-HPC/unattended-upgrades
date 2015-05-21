@@ -378,7 +378,10 @@ def check_changes_for_sanity(cache, allowed_origins, blacklist):
     for pkg in cache:
         if pkg.marked_delete:
             logging.debug("pkg '%s' now marked delete" % pkg.name)
-            return False
+            if not apt_pkg.config.find_b(
+                    "Unattended-Upgrade::AllowRemoveOnUpgrade",
+                    False):
+                return False
         if pkg.marked_install or pkg.marked_upgrade:
             if not is_allowed_origin(pkg.candidate, allowed_origins):
                 logging.debug("pkg '%s' not in allowed origin" % pkg.name)

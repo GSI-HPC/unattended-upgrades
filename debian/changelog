@@ -1,3 +1,9 @@
+unattended-upgrades (0.79.5.gsi1) wheezy; urgency=medium
+
+  * Backported AllowRemoveOnUpgrade feature
+
+ -- Christopher Huhn, GSI <C.Huhn@gsi.de>  Thu, 21 May 2015 14:18:40 +0200
+
 unattended-upgrades (0.79.5) unstable; urgency=low
 
   * data/50unattended-upgrades.{Debian,Ubuntu}:
